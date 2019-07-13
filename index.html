@@ -4,34 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>3rd Degree Detailing</title>
 </head>
 <body>
-    <div>
-        <h1>
-            3rd Degree Detailing Change
-        </h1>
-    </div>
-
-    <div>
-        <ul> Things I need
-            <li>
-                Logo
-            </li>
-            <li>
-                Scheduling
-            </li>
-            <li>
-                Packages
-            </li>
-        </ul>
-        <div>
-            Header Tabs<br>
-            Home, services, schedule, about/contact<br><br>
-            Look at mikes car wash page for inspiration
+    <div class="headerDiv">
+    <header>
+            <div class="scrollingText">
+                <div class="settingMargins">
+                        <ul id="slides">
+                            <li class="slide showing">"Best detail service this side of the Mississippi!" - Colin B.</li>
+                            <li class="slide">"Looked so good my jaw hit the ground faster than a stripper! WOW!!" - Hunter M</li>
+                            <li class="slide">"Pretty shit to be honest..." - Alex B.</li>
+                       </ul>
+                </div>
+            </div>
+            <div class="logoDiv">
+                <div class="settingMargins">
+                    <img src="logo.png">
+                </div>
+            </div>
+            <div class="headerLinks">
+                <div class="settingMargins">
+                    <a href = "">Home</a>
+                    <a href = "">Services</a>
+                    <a href = "">Schedule</a>
+                    <a href = "">About</a>
+                    <a href = "">Contact Us</a>
+                </div>
+                <hr>
+            </div>
         </div>
+    </header>
     </div>
 </body>
+
+<script>
+var slides = document.querySelectorAll('#slides .slide');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,4000);
+
+function nextSlide(){
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].className = 'slide showing';
+}
+</script>
+
 </html>
